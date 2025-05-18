@@ -153,47 +153,84 @@
     </div> -->
   </section>
 
-  <!-- Synopsis Section -->
-  <section class="w-full bg-white/80 backdrop-blur-md py-20" id="synopsis">
+  <!-- About the Author Section -->
+  <section class="w-full bg-white/90 backdrop-blur-md py-16 flex flex-col items-center" id="about">
+    <div class="w-32 h-32 rounded-full bg-lavender border-4 border-sky-500 flex items-center justify-center shadow-glow mb-4 relative">
+      <img src="author_pic.jpg" alt="Savannah Van Dusen"
+           class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-lg" />
+      <span class="absolute bottom-2 right-2 bg-sky-500 text-white text-xs px-2 py-0.5 ring-2 ring-white rounded-full shadow">Author</span>
+    </div>
+    <h2 class="text-3xl font-fantasy font-bold text-sky-500 mb-1">Savannah Van Dusen</h2>
+    <p class="text-lg text-lavender mb-2">Author of The Legend of Emberlyn</p>
+    <p class="max-w-xl text-slate-700 text-center px-4">
+      Savannah Van Dusen writes with stardust on her fingers and purpose in her heart. A weaver of wonder and truth, she blends fairytale beauty with
+      real-world reflection—inviting readers to laugh, feel, and awaken to the magic within and around them. Her stories shimmer with love,
+      compassion, and just the right touch of rebellion.
+    </p>
+  </section>
+
+  <section class="w-full py-20 bg-violet-800/50 backdrop-blur-md" id="notify">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-fantasy font-bold text-center mb-16 text-slate-900">The Story</h2>
-
-      <div class="grid md:grid-cols-3 gap-12">
-        <!-- Faith & Magic Card -->
-        <div class="group relative bg-white/70 p-8 rounded-2xl shadow-md hover:shadow-glow transition-all duration-300">
-          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-skyblue flex items-center justify-center shadow-glow">
-            <span class="text-2xl">✨</span>
-          </div>
-          <h3 class="font-fantasy text-2xl mb-4 text-slate-900 text-center mt-4">Faith & Magic</h3>
-          <div class="h-px w-16 bg-gradient-to-r from-transparent via-sky-400 to-transparent mx-auto mb-6"></div>
-          <p class="text-slate-600 text-center leading-relaxed">
-            Where belief shapes reality and kindness becomes the strongest magic of all. A world where faith illuminates the darkest corners.
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex-1 text-center lg:text-left">
+          <h2 class="text-4xl font-fantasy font-bold text-white mb-6">Join the Adventure</h2>
+          <p class="text-xl text-white/90 mb-8 max-w-2xl">
+            Be among the first to embark on this magical journey. Receive exclusive updates, behind-the-scenes content, and a special gift on launch
+            day.
           </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
+              <div class="text-3xl mb-2">✨</div>
+              <h3 class="font-fantasy text-lg mb-1">Early Access</h3>
+              <p class="text-sm text-white/80">Be the first to read chapter previews</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
+              <div class="text-3xl mb-2">🎁</div>
+              <h3 class="font-fantasy text-lg mb-1">Special Gift</h3>
+              <p class="text-sm text-white/80">Exclusive launch day surprise</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
+              <div class="text-3xl mb-2">📖</div>
+              <h3 class="font-fantasy text-lg mb-1">Behind the Scenes</h3>
+              <p class="text-sm text-white/80">Access to author's journey</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Book of Alore Card -->
-        <div class="group relative bg-white/70 p-8 rounded-2xl shadow-md hover:shadow-glow transition-all duration-300">
-          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-lavender flex items-center justify-center shadow-glow">
-            <span class="text-2xl">📚</span>
-          </div>
-          <h3 class="font-fantasy text-2xl mb-4 text-slate-900 text-center mt-4">The Book of Alore</h3>
-          <div class="h-px w-16 bg-gradient-to-r from-transparent via-lavender to-transparent mx-auto mb-6"></div>
-          <p class="text-slate-600 text-center leading-relaxed">
-            An ancient tome of power that holds the key to uniting all realms through love. Its pages contain secrets that could save—or
-            shatter—worlds.
-          </p>
-        </div>
+        <div
+             class="w-full lg:w-[400px] min-h-[272px] backdrop-blur-lg bg-white/95 rounded-3xl shadow-glow-lg p-8 items-center flex justify-center">
+          <form id="signup-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc3D4DEcppIQePSIpRtK3kxJ9eR1li9erj4lhK1QuHciVZ67Q/formResponse"
+                method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event);" class="space-y-6 block w-full h-full">
+            <div class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
+                <input
+                       type="text"
+                       id="name"
+                       name="entry.1555177811"
+                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
+                       required />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
+                <input
+                       type="email"
+                       id="email"
+                       name="emailAddress"
+                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
+                       required />
+              </div>
+            </div>
 
-        <!-- Divine Guardians Card -->
-        <div class="group relative bg-white/70 p-8 rounded-2xl shadow-md hover:shadow-glow transition-all duration-300">
-          <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-emerald flex items-center justify-center shadow-glow">
-            <span class="text-2xl">👼</span>
-          </div>
-          <h3 class="font-fantasy text-2xl mb-4 text-slate-900 text-center mt-4">Heroes &amp; Warriors</h3>
-          <div class="h-px w-16 bg-gradient-to-r from-transparent via-emerald to-transparent mx-auto mb-6"></div>
-          <p class="text-slate-600 text-center leading-relaxed">
-            Beings blessed with powers that protect the balance between worlds. They are the unseen whispers that guide our hearts.
-          </p>
+            <button type="submit"
+                    class="flex justify-center items-center w-full px-6 py-3 bg-gradient-to-r from-sky-400 to-lavender text-white font-semibold rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300">
+              Begin Your Journey
+            </button>
+
+            <p class="text-center text-sm text-gray-600">
+              Join <span class="text-lavender font-semibold">2,319</span> other adventurers
+            </p>
+          </form>
         </div>
       </div>
     </div>
@@ -388,89 +425,6 @@
         </div> -->
       </div>
     </div>
-  </section>
-
-  <section class="w-full py-20 bg-violet-800/50 backdrop-blur-md" id="notify">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-col lg:flex-row items-center gap-12">
-        <div class="flex-1 text-center lg:text-left">
-          <h2 class="text-4xl font-fantasy font-bold text-white mb-6">Join the Adventure</h2>
-          <p class="text-xl text-white/90 mb-8 max-w-2xl">
-            Be among the first to embark on this magical journey. Receive exclusive updates, behind-the-scenes content, and a special gift on launch
-            day.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">✨</div>
-              <h3 class="font-fantasy text-lg mb-1">Early Access</h3>
-              <p class="text-sm text-white/80">Be the first to read chapter previews</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">🎁</div>
-              <h3 class="font-fantasy text-lg mb-1">Special Gift</h3>
-              <p class="text-sm text-white/80">Exclusive launch day surprise</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">📖</div>
-              <h3 class="font-fantasy text-lg mb-1">Behind the Scenes</h3>
-              <p class="text-sm text-white/80">Access to author's journey</p>
-            </div>
-          </div>
-        </div>
-
-        <div
-             class="w-full lg:w-[400px] min-h-[272px] backdrop-blur-lg bg-white/95 rounded-3xl shadow-glow-lg p-8 items-center flex justify-center">
-          <form id="signup-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc3D4DEcppIQePSIpRtK3kxJ9eR1li9erj4lhK1QuHciVZ67Q/formResponse"
-                method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event);" class="space-y-6 block w-full h-full">
-            <div class="space-y-4">
-              <div>
-                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
-                <input
-                       type="text"
-                       id="name"
-                       name="entry.1555177811"
-                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
-                       required />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
-                <input
-                       type="email"
-                       id="email"
-                       name="emailAddress"
-                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
-                       required />
-              </div>
-            </div>
-
-            <button type="submit"
-                    class="flex justify-center items-center w-full px-6 py-3 bg-gradient-to-r from-sky-400 to-lavender text-white font-semibold rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300">
-              Begin Your Journey
-            </button>
-
-            <p class="text-center text-sm text-gray-600">
-              Join <span class="text-lavender font-semibold">2,319</span> other adventurers
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About the Author Section -->
-  <section class="w-full bg-white/90 backdrop-blur-md py-16 flex flex-col items-center" id="about">
-    <div class="w-32 h-32 rounded-full bg-lavender border-4 border-sky-500 flex items-center justify-center shadow-glow mb-4 relative">
-      <img src="author_pic.jpg" alt="Savannah Van Dusen"
-           class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-lg" />
-      <span class="absolute bottom-2 right-2 bg-sky-500 text-white text-xs px-2 py-0.5 ring-2 ring-white rounded-full shadow">Author</span>
-    </div>
-    <h2 class="text-3xl font-fantasy font-bold text-sky-500 mb-1">Savannah Van Dusen</h2>
-    <p class="text-lg text-lavender mb-2">Author of The Legend of Emberlyn</p>
-    <p class="max-w-xl text-slate-700 text-center px-4">
-      Savannah Van Dusen writes with stardust on her fingers and purpose in her heart. A weaver of wonder and truth, she blends fairytale beauty with
-      real-world reflection—inviting readers to laugh, feel, and awaken to the magic within and around them. Her stories shimmer with love,
-      compassion, and just the right touch of rebellion.
-    </p>
   </section>
 
   <!-- Footer -->
