@@ -1,135 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Legend of Emberlyn</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            skyblue: '#a1cedc',
-            lavender: '#d09ae4',
-            emerald: '#6ee7b7',
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Legend of Emberlyn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              skyblue: "#a1cedc",
+              lavender: "#d09ae4",
+              emerald: "#6ee7b7",
+            },
+            fontFamily: {
+              fantasy: ["Cinzel", "serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 0 24px 4px #a1cedc55",
+              "glow-lg": "0 0 32px 8px #a1cedc33",
+              "glow-white": "0 0 24px 4px rgba(255, 255, 255, 0.3)",
+            },
           },
-          fontFamily: {
-            fantasy: ['Cinzel', 'serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-          boxShadow: {
-            glow: '0 0 24px 4px #a1cedc55',
-            'glow-lg': '0 0 32px 8px #a1cedc33',
-            'glow-white': '0 0 24px 4px rgba(255, 255, 255, 0.3)',
-          }
-        }
-      }
-    }
+        },
+      };
 
-    let loading = false;
+      let loading = false;
 
-    function handleSubmit(event) {
-      event.preventDefault()
-      loading = true
-      const submitButton = event.target.querySelector('button[type="submit"]')
+      function handleSubmit(event) {
+        event.preventDefault();
+        loading = true;
+        const submitButton = event.target.querySelector(
+          'button[type="submit"]'
+        );
 
-      if (loading) {
-        submitButton.innerHTML = `
+        if (loading) {
+          submitButton.innerHTML = `
           <svg class="mr-2 -ml-1 size-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-          Entering Elyndor...`
-      }
+          Entering Elyndor...`;
+        }
 
-      const form = event.target
-      const formData = new FormData(form)
+        const form = event.target;
+        const formData = new FormData(form);
 
-      fetch(form.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
-      }).then(() => {
-        form.innerHTML = `
+        fetch(form.action, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        })
+          .then(() => {
+            form.innerHTML = `
           <div class="flex-1 justify-center items-center text-center h-full w-full m-auto">
             Welcome to "<span class="bg-gradient-to-br font-bold from-violet-400 to-purple-500 bg-clip-text text-transparent">The Legend of Emberlyn</span>",
-            the journey. May your dreams take you everywhere.
-          </div>`
-      }).catch(() => {
-        alert('Oops! Something went wrong. Please try again later.')
-      })
+            the adventure. May your dreams take you everywhere.
+          </div>`;
+          })
+          .catch(() => {
+            alert("Oops! Something went wrong. Please try again later.");
+          });
 
-      return false
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        return false;
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVEKVMR85J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JVEKVMR85J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-JVEKVMR85J');
-  </script>
-</head>
+      gtag("config", "G-JVEKVMR85J");
+    </script>
+  </head>
 
-<body class="font-body bg-gradient-to-l from-sky-400 to-purple-400 min-h-screen">
-  <!-- Hero Section -->
-  <section class="relative flex flex-col items-center justify-center min-h-screen text-center px-4 overflow-hidden shadow-lg">
-    <div class="absolute inset-0 z-0 pointer-events-none">
-      <img src="Emberlyn.webp" alt="Emberlyn Fairy" class="w-full h-full object-cover opacity-30 blur-none" />
-    </div>
-    <div class="relative z-10">
-      <h1 class="text-6xl md:text-7xl font-fantasy font-bold text-white drop-shadow-lg">
-        The Legend of Emberlyn
-      </h1>
-      <div class="flex justify-center max-w-2xl items-center mb-12 mx-auto">
-        <div class="h-px w-24 bg-gradient-to-r from-transparent to-skyblue mx-auto"></div>
-        <span class="text-xl md:text-2xl text-white font-semibold uppercase drop-shadow leading-none">
-          Where <span class="bg-gradient-to-br from-green-200 to-green-500 bg-clip-text text-transparent">magic</span> meets <span
-                class="bg-gradient-to-br from-purple-500 to-violet-600 bg-clip-text text-transparent">meaning</span>
-        </span>
-        <div class="h-px w-24 bg-gradient-to-r from-skyblue to-transparent mx-auto"></div>
+  <body
+    class="font-body bg-gradient-to-l from-sky-400 to-purple-400 min-h-screen"
+  >
+    <!-- Hero Section -->
+    <section
+      class="relative flex flex-col items-center justify-center min-h-screen text-center px-4 overflow-hidden shadow-lg"
+    >
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="Emberlyn.webp"
+          alt="Emberlyn Fairy"
+          class="w-full h-full object-cover opacity-30 blur-none"
+        />
       </div>
-      <a href="#notify"
-         class="px-9 py-4 shadow-md bg-gradient-to-br from-lavender to-violet-400 hover:shadow-lg text-white uppercase font-semibold rounded-full hover:to-violet-500 hover:ring-4 ring-lavender transition-all text-lg">
-        Begin the Journey
-      </a>
-    </div>
-  </section>
+      <div class="relative z-10">
+        <h1
+          class="text-6xl md:text-7xl font-fantasy font-bold text-white drop-shadow-lg"
+        >
+          The Legend of Emberlyn
+        </h1>
+        <div class="flex justify-center max-w-2xl items-center mb-12 mx-auto">
+          <div
+            class="h-px w-24 bg-gradient-to-r from-transparent to-skyblue mx-auto"
+          ></div>
+          <span
+            class="text-xl md:text-2xl text-white font-semibold uppercase drop-shadow leading-none"
+          >
+            Where
+            <span
+              class="bg-gradient-to-br from-green-200 to-green-500 bg-clip-text text-transparent"
+              >magic</span
+            >
+            meets
+            <span
+              class="bg-gradient-to-br from-purple-500 to-violet-600 bg-clip-text text-transparent"
+              >meaning</span
+            >
+          </span>
+          <div
+            class="h-px w-24 bg-gradient-to-r from-skyblue to-transparent mx-auto"
+          ></div>
+        </div>
+        <a
+          href="#notify"
+          class="px-9 py-4 shadow-md bg-gradient-to-br from-lavender to-violet-400 hover:shadow-lg text-white uppercase font-semibold rounded-full hover:to-violet-500 hover:ring-4 ring-lavender transition-all text-lg"
+        >
+          Begin the Adventure
+        </a>
+      </div>
+    </section>
 
-  <!-- Excerpt Section -->
-  <section class="relative w-full py-32 overflow-hidden" id="excerpt">
-    <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-md"></div>
+    <!-- Excerpt Section -->
+    <section class="relative w-full py-32 overflow-hidden" id="excerpt">
+      <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-md"></div>
 
-    <!-- Optional: Decorative Elements -->
-    <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080?text=Magical+Background')] bg-cover bg-center opacity-5"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sky-400/5 to-transparent"></div>
-
-    <div class="relative max-w-3xl mx-auto px-4">
-      <h2 class="text-4xl font-fantasy font-bold text-center mb-12 text-white">
-        Synopsis
-        <div class="h-px w-24 bg-gradient-to-r from-transparent via-skyblue to-transparent mx-auto mt-4"></div>
-      </h2>
-
+      <!-- Optional: Decorative Elements -->
       <div
-           class="bg-white/5 p-12 rounded-2xl shadow-glow-white backdrop-blur-sm border border-white/10 text-xl md:text-2xl text-white/90 leading-relaxed mb-6 space-y-4">
-        <p>
-          Emberlyn, a young fae from the enchanting world of Elyndor, lived in peace and harmony alongside her friends under the protection of
-          an all powerful King. Beauty filled every corner of Elyndor. It was a land governed by love, light and magic.
-        </p>
-        <p>
-          Despite the happiness that transcended in Elyndor, a growing shadow loomed in secret, one that would change the fate of Emberlyn's world
-          forever. Like a thief in the night, a dark magic overpowered the land confining its true form.
-        </p>
-        <p>
-          Behind the veil, hidden in a world stripped of its magic, Emberlyn remains the last flicker of Elyndor’s hope. Her memories
-          and those of her kingdom have been erased. Now, Emberlyn must restore her lost kingdom by rediscovering her own light, while striving to
-          ignite it in others.
-        </p>
+        class="absolute inset-0 bg-[url('https://placehold.co/1920x1080?text=Magical+Background')] bg-cover bg-center opacity-5"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-sky-400/5 to-transparent"
+      ></div>
+
+      <div class="relative max-w-3xl mx-auto px-4">
+        <h2
+          class="text-4xl font-fantasy font-bold text-center mb-12 text-white"
+        >
+          Synopsis
+          <div
+            class="h-px w-24 bg-gradient-to-r from-transparent via-skyblue to-transparent mx-auto mt-4"
+          ></div>
+        </h2>
+
+        <div
+          class="bg-white/5 p-12 rounded-2xl shadow-glow-white backdrop-blur-sm border border-white/10 text-xl md:text-2xl text-white/90 leading-relaxed mb-6 space-y-4"
+        >
+          <p>
+            Emberlyn, a young fae from the enchanting world of Elyndor, lived in
+            peace and harmony alongside her friends under the protection of an
+            all powerful King. Beauty filled every corner of Elyndor. It was a
+            land governed by love, light and magic.
+          </p>
+          <p>
+            Despite the happiness that transcended in Elyndor, a growing shadow
+            loomed in secret, one that would change the fate of Emberlyn's world
+            forever. Like a thief in the night, a dark magic overpowered the
+            land confining its true form.
+          </p>
+          <p>
+            Behind the veil, hidden in a world stripped of its magic, Emberlyn
+            remains the last flicker of Elyndor’s hope. Her memories and those
+            of her kingdom have been erased. Now, Emberlyn must restore her lost
+            kingdom by rediscovering her own light, while striving to ignite it
+            in others.
+          </p>
+        </div>
       </div>
-    </div>
-    <!-- <div class="relative max-w-3xl mx-auto px-4">
+      <!-- <div class="relative max-w-3xl mx-auto px-4">
       <h2 class="text-4xl font-fantasy font-bold text-center mb-12 text-white">
         From the Pages
         <div class="h-px w-24 bg-gradient-to-r from-transparent via-skyblue to-transparent mx-auto mt-4"></div>
@@ -151,98 +203,152 @@
         </div>
       </blockquote>
     </div> -->
-  </section>
+    </section>
 
-  <!-- About the Author Section -->
-  <section class="w-full bg-white/90 backdrop-blur-md py-16 flex flex-col items-center" id="about">
-    <div class="w-32 h-32 rounded-full bg-lavender border-4 border-sky-500 flex items-center justify-center shadow-glow mb-4 relative">
-      <img src="author_pic.jpg" alt="Savannah Van Dusen"
-           class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-lg" />
-      <span class="absolute bottom-2 right-2 bg-sky-500 text-white text-xs px-2 py-0.5 ring-2 ring-white rounded-full shadow">Author</span>
-    </div>
-    <h2 class="text-3xl font-fantasy font-bold text-sky-500 mb-1">Savannah Van Dusen</h2>
-    <p class="text-lg text-lavender mb-2">Author of The Legend of Emberlyn</p>
-    <p class="max-w-xl text-slate-700 text-center px-4">
-      Savannah Van Dusen writes with stardust on her fingers and purpose in her heart. A weaver of wonder and truth, she blends fairytale beauty with
-      real-world reflection—inviting readers to laugh, feel, and awaken to the magic within and around them. Her stories shimmer with love,
-      compassion, and just the right touch of rebellion.
-    </p>
-  </section>
+    <!-- About the Author Section -->
+    <section
+      class="w-full bg-white/90 backdrop-blur-md py-16 flex flex-col items-center"
+      id="about"
+    >
+      <div
+        class="w-32 h-32 rounded-full bg-lavender border-4 border-sky-500 flex items-center justify-center shadow-glow mb-4 relative"
+      >
+        <img
+          src="author_pic.jpg"
+          alt="Savannah Van Dusen"
+          class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-lg"
+        />
+        <span
+          class="absolute bottom-2 right-2 bg-sky-500 text-white text-xs px-2 py-0.5 ring-2 ring-white rounded-full shadow"
+          >Author</span
+        >
+      </div>
+      <h2 class="text-3xl font-fantasy font-bold text-sky-500 mb-1">
+        Savannah Van Dusen
+      </h2>
+      <p class="text-lg text-lavender mb-2">Author of The Legend of Emberlyn</p>
+      <p class="max-w-xl text-slate-700 text-center px-4">
+        Savannah Van Dusen writes with stardust on her fingers and purpose in
+        her heart. A weaver of wonder and truth, she blends fairytale beauty
+        with real-world reflection—inviting readers to laugh, feel, and awaken
+        to the magic within and around them. Her stories shimmer with love,
+        compassion, and just the right touch of rebellion.
+      </p>
+    </section>
 
-  <section class="w-full py-20 bg-violet-800/50 backdrop-blur-md" id="notify">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-col lg:flex-row items-center gap-12">
-        <div class="flex-1 text-center lg:text-left">
-          <h2 class="text-4xl font-fantasy font-bold text-white mb-6">Join the Adventure</h2>
-          <p class="text-xl text-white/90 mb-8 max-w-2xl">
-            Be among the first to embark on this magical journey. Receive exclusive updates, behind-the-scenes content, and a special gift on launch
-            day.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">✨</div>
-              <h3 class="font-fantasy text-lg mb-1">Early Access</h3>
-              <p class="text-sm text-white/80">Be the first to read chapter previews</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">🎁</div>
-              <h3 class="font-fantasy text-lg mb-1">Special Gift</h3>
-              <p class="text-sm text-white/80">Exclusive launch day surprise</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white">
-              <div class="text-3xl mb-2">📖</div>
-              <h3 class="font-fantasy text-lg mb-1">Behind the Scenes</h3>
-              <p class="text-sm text-white/80">Access to author's journey</p>
+    <section class="w-full py-20 bg-violet-800/50 backdrop-blur-md" id="notify">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="flex-1 text-center lg:text-left">
+            <h2 class="text-4xl font-fantasy font-bold text-white mb-6">
+              Join the Adventure
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl">
+              Be among the first to embark on this magical adventure. Receive
+              exclusive updates, behind-the-scenes content, and a special gift
+              on launch day.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div
+                class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white"
+              >
+                <div class="text-3xl mb-2">✨</div>
+                <h3 class="font-fantasy text-lg mb-1">Early Access</h3>
+                <p class="text-sm text-white/80">
+                  Be the first to read chapter previews
+                </p>
+              </div>
+              <div
+                class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white"
+              >
+                <div class="text-3xl mb-2">🎁</div>
+                <h3 class="font-fantasy text-lg mb-1">Special Gift</h3>
+                <p class="text-sm text-white/80">
+                  Exclusive launch day surprise
+                </p>
+              </div>
+              <div
+                class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white"
+              >
+                <div class="text-3xl mb-2">📖</div>
+                <h3 class="font-fantasy text-lg mb-1">Behind the Scenes</h3>
+                <p class="text-sm text-white/80">Access to author's journey</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div
-             class="w-full lg:w-[400px] min-h-[272px] backdrop-blur-lg bg-white/95 rounded-3xl shadow-glow-lg p-8 items-center flex justify-center">
-          <form id="signup-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc3D4DEcppIQePSIpRtK3kxJ9eR1li9erj4lhK1QuHciVZ67Q/formResponse"
-                method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event);" class="space-y-6 block w-full h-full">
-            <div class="space-y-4">
-              <div>
-                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
-                <input
-                       type="text"
-                       id="name"
-                       name="entry.1555177811"
-                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
-                       required />
+          <div
+            class="w-full lg:w-[400px] min-h-[272px] backdrop-blur-lg bg-white/95 rounded-3xl shadow-glow-lg p-8 items-center flex justify-center"
+          >
+            <form
+              id="signup-form"
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc3D4DEcppIQePSIpRtK3kxJ9eR1li9erj4lhK1QuHciVZ67Q/formResponse"
+              method="POST"
+              target="hidden_iframe"
+              onsubmit="return handleSubmit(event);"
+              class="space-y-6 block w-full h-full"
+            >
+              <div class="space-y-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="entry.1555177811"
+                    class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="emailAddress"
+                    class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
+                    required
+                  />
+                </div>
               </div>
-              <div>
-                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
-                <input
-                       type="email"
-                       id="email"
-                       name="emailAddress"
-                       class="w-full px-4 py-2.5 rounded-xl border border-lavender focus:border-sky-400 focus:ring-2 focus:ring-sky-400/50 bg-white/90"
-                       required />
-              </div>
-            </div>
 
-            <button type="submit"
-                    class="flex justify-center items-center w-full px-6 py-3 bg-gradient-to-r from-sky-400 to-lavender text-white font-semibold rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300">
-              Begin Your Journey
-            </button>
+              <button
+                type="submit"
+                class="flex justify-center items-center w-full px-6 py-3 bg-gradient-to-r from-sky-400 to-lavender text-white font-semibold rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Begin Your Adventure
+              </button>
 
-            <p class="text-center text-sm text-gray-600">
-              Join <span class="text-lavender font-semibold">2,319</span> other adventurers
-            </p>
-          </form>
+              <p class="text-center text-sm text-gray-600">
+                Join
+                <span class="text-lavender font-semibold">2,319</span> other
+                adventurers
+              </p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="w-full text-center py-6 text-sm text-slate-700 bg-white/40 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-4">
-      <p class="mb-2">&copy; 2025 The Legend of Emberlyn. All rights reserved.</p>
-      <p class="text-xs">A tale of faith, love, and the magic that binds all worlds together.</p>
-    </div>
-  </footer>
-</body>
-
+    <!-- Footer -->
+    <footer
+      class="w-full text-center py-6 text-sm text-slate-700 bg-white/40 backdrop-blur"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="mb-2">
+          &copy; 2025 The Legend of Emberlyn. All rights reserved.
+        </p>
+        <p class="text-xs">
+          A tale of faith, love, and the magic that binds all worlds together.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
